@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Click Text Change</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      position: relative;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit:
+      display: block;
+    }
+    .text-box {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      text-align: center;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" onclick="changeText()">
+  <img src="images/image3.jpg" alt="Full-screen image">
+  <div class="text-box" id="text-box">Click the image to change this text.</div>
+</div>
+
+<script>
+  const sentences = [
+    " and when your gone i feel incomplete ",
+    " so if you want the truth ",
+    " I just want to be part of your ",
+    " SYMPHONY ",
+    " will you hold me tight and not let go? "
+  ];
+
+  let index = 0;
+
+  function changeText() {
+    index = (index + 1) % sentences.length;
+    document.getElementById('text-box').innerText = sentences[index];
+  }
+</script>
+
+</body>
+</html>
+
+
